@@ -16,4 +16,4 @@ lawyer1 = Lawyer.create(name: "Michael", email: "lawfirm@gmail.com", phone: 3056
 
 lawyer2 = Lawyer.create(name: "Mandy", email: "lawfirm2@gmail.com", phone: 3054564567, address: "432 NE 15 st Fort Lauderdale, FL", attorney_fee: 75 )
 
-lawyer3 = Lawyer.create(name: "Alex", email: "lawfirm3@gmail.com", phone: 3059804567, address: "432 NE 15 st Fort Lauderdale, FL", attorney_fee: 45 )
+lawyer3 = Lawyer.new(name: "Alex", email: "lawfirm3@gmail.com", phone: 3059804567, address: "432 NE 15 st Fort Lauderdale, FL", attorney_fee: 45 )
