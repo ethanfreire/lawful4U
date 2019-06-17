@@ -10,22 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_17_181134) do
+ActiveRecord::Schema.define(version: 2019_06_17_212258) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "duration"
-    t.string "type"
-    t.integer "date"
-    t.integer "time"
+    t.string "appointment_type"
     t.integer "case_id"
     t.integer "lawyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "datetime"
   end
 
   create_table "cases", force: :cascade do |t|
     t.string "title"
-    t.string "type"
+    t.string "case_type"
     t.string "status"
     t.integer "client_id"
     t.datetime "created_at", null: false

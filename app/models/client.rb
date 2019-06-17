@@ -1,6 +1,7 @@
 class Client < ApplicationRecord
   has_many :cases
-  has_many :appointments, through: :cases
-  has_many :lawyers, through: :appointments
+  delegate :appointment, to: :case
+  has_many :lawyers, through: :lawyer_cases
+
 
 end
