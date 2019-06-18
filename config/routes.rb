@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  get 'case/show'
+  get 'case/index'
+  get 'case/edit'
+  get 'case/update'
+  get 'case/new'
+  get 'case/destroy'
+  get 'case/create'
   resources :lawyers
   resources :clients
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
