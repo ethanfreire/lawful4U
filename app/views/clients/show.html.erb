@@ -1,0 +1,20 @@
+<h2><%= @client.name%> Page</h2>
+
+<strong>
+  <ul>
+    <li>Name: <%= @client.name %></li><br>
+
+    <li>Email: <%= @client.email %></li><br>
+
+    <li>Phone: <%= @client.phone %></li><br>
+
+    <li>Address: <%= @client.address %></li><br>
+  </ul>
+
+</strong>
+
+<%= form_tag client_path(@client.id), method: "DELETE" do %>
+  <%= submit_tag "Delete #{@client.name}" %>
+  <% end %><br><br>
+
+<%= link_to "Edit", edit_client_path %>

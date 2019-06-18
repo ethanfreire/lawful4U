@@ -12,6 +12,7 @@ Lawyer.delete_all
 Client.delete_all
 Case.delete_all
 Appointment.delete_all
+LawyerCase.delete_all
 
 user1 = Client.create(name: "Rick", email: "myemail@gmail.com", phone: 7863456657, address: "123 NW 4th st Coral Gables, FL")
 user2 = Client.create(name: "Nevin", email: "myemail2@gmail.com", phone: 7865556657, address: "456 NW 7th st Kendall, FL")
@@ -35,3 +36,6 @@ case3 = Case.create(title: "Minor car crash Alex vs. Lexi ", case_type: "post-tr
 
 #appointment
 appointment1 = Appointment.create(duration: 60, datetime: DateTime.new(2009,9,14,8), appointment_type: "delegation", case_id: case1.id, lawyer_id: lawyer3.id)
+
+#lawyer_cases
+lawyer_cases1 = LawyerCase.create(lawyer_id: lawyer1.id,case_id: case2.id)

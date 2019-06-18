@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User</title>
+  </head>
+  <body>
+    <h1><center>Welcome User!</center></h1>
+    <%= link_to "Home", clients_path %>
+    <%= link_to "New", new_client_path %>
+    <%= yield %>
+  </body>
+</html>

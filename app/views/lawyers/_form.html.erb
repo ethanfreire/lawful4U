@@ -1,0 +1,20 @@
+<strong>
+  <%= form_for @lawyer do |f| %>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :email, "Email:" %>
+    <%= f.text_field :email %><br><br>
+
+    <%= f.label :phone, "Phone:" %>
+    <%= f.telephone_field :phone %><br><br>
+
+    <%= f.label :address, "Address:" %>
+    <%= f.text_area :address %><br><br>
+
+    <%= f.label :attorney_fee, "Fee:" %>
+    <%= f.number_field :attorney_fee %><br><br>
+
+    <%= f.submit %>
+  <% end %>
+</strong>

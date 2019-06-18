@@ -1,0 +1,18 @@
+<strong>
+  <%= form_for @client do |f| %>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :email, "Email:" %>
+    <%= f.email_field :email %><br><br>
+
+    <%= f.label :phone, "Phone:" %>
+    <%= f.telephone_field :phone %><br><br>
+
+    <%= f.label :address, "Address:" %>
+    <%= f.text_area :address %><br><br>
+    <!-- add address_attributes later!!! by_JT-->
+
+    <%= f.submit %>
+  <% end %>
+</strong>

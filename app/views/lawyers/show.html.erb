@@ -1,0 +1,17 @@
+<h1><%= @lawyer.name%> Profile</h1>
+
+
+<strong>
+  <ul>
+    <li>Name: <%= @lawyer.name %></li>
+    <li>Email: <%= @lawyer.email %></li>
+    <li>Phone: <%= @lawyer.phone %></li>
+    <li>Address: <%= @lawyer.address %></li>
+    <li>Fee: <%= @lawyer.attorney_fee %></li>
+  </ul>
+</strong>
+
+<%= form_tag lawyer_path(@lawyer.id), method: "DELETE" do %>
+  <%= submit_tag "Delete #{@lawyer.name}" %>
+  <% end %>
+<%= link_to "Edit", edit_lawyer_path %>
