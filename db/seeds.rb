@@ -39,3 +39,5 @@ appointment1 = Appointment.create(duration: 60, datetime: DateTime.new(2009,9,14
 
 #lawyer_cases
 lawyer_cases1 = LawyerCase.create(lawyer_id: lawyer1.id,case_id: case2.id)
+lawyer_cases2 = LawyerCase.create(lawyer_id: lawyer1.id,case_id: case1.id)
+# lawyer_cases3 = LawyerCase.create(lawyer_id: lawyer1.id,case_id: case3.id)

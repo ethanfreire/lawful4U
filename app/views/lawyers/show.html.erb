@@ -11,6 +11,14 @@
   </ul>
 </strong>
 
+<strong>Cases:</strong>
+<ol>
+  <% @lawyer.cases.each do |obj| %>
+  <li><%= obj.title %></li>
+  <% end %>
+</ol>
+
+
 <%= form_tag lawyer_path(@lawyer.id), method: "DELETE" do %>
   <%= submit_tag "Delete #{@lawyer.name}" %>
   <% end %>
