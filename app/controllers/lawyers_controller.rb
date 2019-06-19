@@ -1,11 +1,10 @@
 class LawyersController < ApplicationController
 
-  layout "lawyer"
 
   before_action :find_lawyer, only: [:edit, :show, :update, :destroy]
 
   def index
-    @lawyers =Lawyer.all
+    @lawyers = Lawyer.all
   end
 
   def show
@@ -22,6 +21,7 @@ class LawyersController < ApplicationController
     @lawyer = Lawyer.new(lawyer_params)
     if @lawyer.valid?
       @lawyer.save
+      
       redirect_to lawyer_path(@lawyer)
     else
       render :new
@@ -48,6 +48,6 @@ class LawyersController < ApplicationController
   end
 
   def lawyer_params
-    params.require(:lawyer).permit(:name, :email, :phone, :address, :attorney_fee)
+    params.require(:lawyer).permit(:name, :email, :phone, :address, :attorney_fee, :user_id)
   end
 end

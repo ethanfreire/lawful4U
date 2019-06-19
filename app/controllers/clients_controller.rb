@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
 
-  layout "client"
+  # layout "client"
 
   before_action :find_client, only: [:edit, :show, :update, :destroy]
 
@@ -49,6 +49,6 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:name, :email, :phone, :address)
+    params.require(:client).permit(:name, :email, :phone, :address, :user_id)
   end
 end

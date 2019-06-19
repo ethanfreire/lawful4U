@@ -1,4 +1,5 @@
 class Lawyer < ApplicationRecord
+  belongs_to :user
   has_many :lawyer_cases
   has_many :cases, through: :lawyer_cases
   has_many :appointments

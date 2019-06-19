@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_043822) do
+ActiveRecord::Schema.define(version: 2019_06_19_214348) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "duration"
-    t.datetime "datetime"
     t.string "appointment_type"
     t.integer "case_id"
     t.integer "lawyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "datetime"
   end
 
   create_table "cases", force: :cascade do |t|
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_043822) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "lawyer_cases", force: :cascade do |t|
@@ -55,13 +56,15 @@ ActiveRecord::Schema.define(version: 2019_06_19_043822) do
     t.integer "attorney_fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_type"
   end
 
 end

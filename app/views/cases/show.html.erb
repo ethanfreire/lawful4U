@@ -1,2 +1,21 @@
-<h1>Cases#show</h1>
-<p>Find me in app/views/cases/show.html.erb</p>
+<h1><%= @case.title %></h1>
+<br />
+Status: <%= @case.status %>
+<br  />
+Case Type: <%= @case.case_type %>
+<br  />
+
+Case Client: <%= @case.client.name%>
+<br/>
+
+Case Lawyers:
+<% @case.lawyers.each do |obj| %>
+<li><%= obj.name %></li>
+<% end %>
+<br/>
+<%= link_to "Edit this Case", edit_case_path %>
+
+
+<%= form_tag case_path(@case), method: "DELETE" do %>
+ <%= submit_tag "Delete This Case" %>
+<% end %>

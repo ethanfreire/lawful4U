@@ -3,14 +3,20 @@ class SessionsController < ApplicationController
   end
 
   def create
-      @user = User.find_by(username: params[:username])
-      if @user && @user.authenticate(params[:password])
+      @user = User.find_by(email: params[:email])
+
+      if @user && @user.authenticate(params[:password]) && @user.user_type == "Client"
         session[:user_id] = @user.id
+
         redirect_to clients_path
+      elsif @user && @user.authenticate(params[:password]) && @user.user_type == "Lawyer"
+        session[:user_id] = @user.id
+
+        redirect_to lawyers_path
       else
         flash["notice"] = "No username/password combination found."
         render :new
-      end 
+      end
   end
 
   def destroy

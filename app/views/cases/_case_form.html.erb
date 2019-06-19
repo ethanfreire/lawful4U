@@ -1,0 +1,12 @@
+<%= form_for @case do |f| %>
+ <%= f.label :title %>
+ <%= f.text_field :title %>
+ <%= f.label :case_type %>
+ <%= f.text_field :case_type %>
+ <%= f.label :status %>
+ <%= f.text_field :status %>
+ <!--associate client name with their client id -->
+ <%= f.hidden_field "#{get_current_user.email}" %>
+ <%= f.submit %>
+<% end %>
+<%# Client Name: <%= @case.client.name %> %>

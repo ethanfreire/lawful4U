@@ -1,2 +1,5 @@
-<h1>Cases#new</h1>
-<p>Find me in app/views/cases/new.html.erb</p>
+<%= render partial: "shared/error", locals: {object: @case} %>
+
+ <h1>Create a New Case</h1>
+
+  <%= render "case_form" %>

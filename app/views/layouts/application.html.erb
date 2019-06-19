@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <% if session["user_id"] %>
+        <div><strong>Welcome <%= get_current_user.email %></strong></div>
+        <%= link_to "Logout", "/logout", method: "DELETE" %>
+        <% else %>
+        <%= link_to "Login", login_path %>
+    <% end %>
 
     <%= yield %>
   </body>

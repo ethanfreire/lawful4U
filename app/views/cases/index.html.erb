@@ -1,2 +1,9 @@
-<h1>Cases#index</h1>
-<p>Find me in app/views/cases/index.html.erb</p>
+<h1>All Cases</h1>
+
+<ul>
+<% @cases.each do |obj| %>
+<li>
+<%= link_to obj.title, case_path(obj)  %>
+</li>
+<% end %>
+</ul>

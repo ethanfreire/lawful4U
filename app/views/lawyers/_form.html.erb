@@ -14,6 +14,7 @@
 
     <%= f.label :attorney_fee, "Fee:" %>
     <%= f.number_field :attorney_fee %><br><br>
+    <%= f.hidden_field :user_id, value: get_current_user.id %>
 
     <%= f.submit %>
   <% end %>

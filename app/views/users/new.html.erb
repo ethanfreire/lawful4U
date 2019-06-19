@@ -6,11 +6,12 @@
 
 <strong>
     <%= form_for @user, :url => create_user_path  do |f| %>
-        <%= f.label :username, "Username:" %>
-        <%= f.text_field :username %>
+        <%= f.label :email, "email:" %>
+        <%= f.text_field :email %>
 
         <%= f.label :password, "Password:" %>
         <%= f.password_field :password %>
+        <%= f.select :user_type, ['Lawyer', 'Client']%>
 
         <%= f.submit %>
     <% end %>
