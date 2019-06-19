@@ -1,7 +1,7 @@
 <% if object.errors %>
-  <% object.errors.full_messages.each do |msg| %>
+  <% object.errors.full_messages.each do |message| %>
     <ul>
-      <li><%= msg %></li>
+      <li><%= message %></li>
     </ul>
     <% end %>
   <% end %>
