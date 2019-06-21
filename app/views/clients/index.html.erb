@@ -1,8 +1,8 @@
 
 <h2><%= get_current_user.email %>'s Profile</h2>
 
-<ul>
   <% @clients.each do |client| %>
-    <li><%= link_to client.name, client %></li>
+    <%= link_to client.name, client %><br><br>
   <% end %>
-</ul>
+
+ 

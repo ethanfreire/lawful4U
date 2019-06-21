@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+  post '/', to: "sessions#create"
+  
   get 'users/new', to: "users#new", as: "new_user"
   post '/users', to: "users#create", as: "create_user"
 

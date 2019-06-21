@@ -4,6 +4,8 @@ class ClientsController < ApplicationController
   # layout "client"
 
   before_action :find_client, only: [:edit, :show, :update, :destroy]
+  before_action :authorized, except: [:index]
+
 
   def index
 
