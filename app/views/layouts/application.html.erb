@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lawful4U</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>Justice</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+    </head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <body>
+    <div class="nav-header">
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary menu">
+                <a class="item" href='/'>Home</a>
+                <a class="item" href='/clients'>Clients</a>
+                <a class="item" href='/lawyers'>Attorneys</a>
+                <div class="right menu">
+                <div class="item">
+                    <div class="ui button"><a href='/login'>Log in</div>
+                </div>
+                <div class="item"><a href='/users/new'>
+                    <div class="ui primary button">Sign up</div></a>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <%= yield %>
+    </body>
 
-  <body>
-
-    <%= yield %>
-  </body>
+    <div class="footer">
+        <footer>
+            <p>© 2019 Lawful4U - Personal Injury and Accident Lawyers.<br>
+            Contact information: <a href="mailto:someone@example.com">contactus@lawful4u.com</a></p>
+        </footer>
 </html>

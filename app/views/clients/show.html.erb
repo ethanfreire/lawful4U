@@ -1,20 +1,30 @@
-<h2><%= @client.name%> Page</h2>
+<br><br><br><br><br><br>
+<div class="show">
+<h1><%= @client.name%>'s Profile</h1>
 
-<strong>
-  <ul>
-    <li>Name: <%= @client.name %></li><br>
+<br><br><br>
 
-    <li>Email: <%= @client.email %></li><br>
+<div class="list">
+    <h3>
+        Name: <%= @client.name %><br><br>
+        Email: <%= @client.email %><br><br>
+        Phone: <%= @client.phone %><br><br>
+        Address: <%= @client.address %>
+    </h3>
+</div>
 
-    <li>Phone: <%= @client.phone %></li><br>
+<br><br>
 
-    <li>Address: <%= @client.address %></li><br>
-  </ul>
 
-</strong>
+<div class="delete-link">
+    <%= form_tag client_path(@client.id), method: "DELETE" do %>
+        <%= submit_tag "Delete #{@client.name}" %>
+    <% end %>
+</div>
+  
+<br><br>
 
-<%= form_tag client_path(@client.id), method: "DELETE" do %>
-  <%= submit_tag "Delete #{@client.name}" %>
-  <% end %><br><br>
-
-<%= link_to "Edit", edit_client_path %>
+<div class="edit-link">
+    <%= link_to "Edit", edit_client_path %>
+</div>
+</div>

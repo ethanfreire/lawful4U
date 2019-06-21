@@ -8,7 +8,11 @@ class UsersController < ApplicationController
       if @user.valid?
         @user.save
         session[:user_id] = @user.id
-        redirect_to clients_path
+        if @user.admin?
+            redirect_to new_lawyer_path
+        else
+            redirect_to clients_path
+        end
       else
         render :new
       end
@@ -17,6 +21,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :password, :email, :admin)
   end
 end

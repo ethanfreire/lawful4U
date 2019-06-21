@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_19_043822) do
+ActiveRecord::Schema.define(version: 2019_06_20_221839) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "duration"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_043822) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "gender"
   end
 
   create_table "lawyer_cases", force: :cascade do |t|
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_06_19_043822) do
     t.integer "attorney_fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "gender"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +64,8 @@ ActiveRecord::Schema.define(version: 2019_06_19_043822) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.string "email"
   end
 
 end

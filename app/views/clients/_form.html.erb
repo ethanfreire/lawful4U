@@ -11,6 +11,9 @@
 
     <%= f.label :address, "Address:" %>
     <%= f.text_area :address %><br><br>
+
+    <%= f.label :gender, "Gender:" %>
+    <%= f.select :gender, ['Male', 'Female']%><br><br>
     <!-- add address_attributes later!!! by_JT-->
 
     <%= f.submit %>

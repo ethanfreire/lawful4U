@@ -1,17 +1,26 @@
-<h1>Create an account or <%= link_to  "Login", login_path %></h1>
+<br><br><br><br><br><br>
+<h1>Sign Up or <%= link_to  "Login", login_path %></h1>
 
 <% if @user.errors %>
     <%= render partial: "shared/error", locals: { object: @user } %>
 <% end %>
 
-<strong>
-    <%= form_for @user, :url => create_user_path  do |f| %>
-        <%= f.label :username, "Username:" %>
-        <%= f.text_field :username %>
+<div class="form-box">
+    <h3>
+        <%= form_for @user, :url => create_user_path  do |f| %>
+            <%= f.label :username %>
+            <%= f.text_field :username %><br><br>
 
-        <%= f.label :password, "Password:" %>
-        <%= f.password_field :password %>
+            <%= f.label :password %>
+            <%= f.password_field :password %><br><br>
 
-        <%= f.submit %>
-    <% end %>
-</strong>
+            <%= f.label :email %>
+            <%= f.text_field :email %><br><br>
+
+            <%= f.label :admin %>
+            <%= f.check_box :admin %><br><br>
+
+            <%= f.submit "Sign up" %>
+        <% end %>
+    </h3>
+<div>

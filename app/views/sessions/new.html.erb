@@ -1,17 +1,20 @@
-<h1>Login or <%= link_to "Create an account", new_user_path %></h1>
+<br><br><br><br><br><br>
+<h1>Login or <%= link_to "Sign Up", new_user_path %></h1>
 
 <div class="error">
     <%= flash.notice %>
 </div>
 
-<strong>
-    <%= form_for "/login" do %>
-        <%= label :username, "Username:" %>
-        <%= text_field_tag :username %>
+<div class="form-box">
+    <h3>
+        <%= form_for "/login" do |f| %>
+            <%= f.label :username %>
+            <%= f.text_field :username %><br><br>
 
-        <%= label :password, "Password:" %>
-        <%= password_field_tag :password %>
+            <%= f.label :password %>
+            <%= f.password_field :password %><br><br> 
 
-        <%= submit_tag "Login" %>
-    <% end %>
-</strong>
+            <%= f.submit "Log in" %>
+        <% end %>
+    </h3>
+</div>

@@ -1,8 +1,9 @@
 class LawyersController < ApplicationController
 
-  layout "lawyer"
+#   layout "lawyer"
 
   before_action :find_lawyer, only: [:edit, :show, :update, :destroy]
+  before_action :authorized, except: [:index]
 
   def index
     @lawyers =Lawyer.all

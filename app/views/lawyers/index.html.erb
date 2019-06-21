@@ -1,8 +1,19 @@
-<h1>Lawyers</h1>
+<br><br><br><br><br><br>
+<div>
+    <h1>Meet Our Team<br>Our Team Of Dedicated Attorneys Serving The Capitol</h1>
+</div>
 
-<ul>
-  <% @lawyers.each do |lawyer| %>
-    <li><%= link_to lawyer.name, lawyer_path(lawyer) %></li>
-  <% end %>
+<br><br>
 
-</ul>
+<div class="login">
+    <% if session["user_id"] %>
+        Welcome <%= get_current_user.username %>!<br>
+        <button><%= link_to "Logout", logout_path, method: "DELETE" %></button>
+    <% end %>
+</div>
+
+<% @lawyers.each do |lawyer| %>
+    <%= link_to lawyer.name, lawyer_path(lawyer) %><br><br>
+<% end %>
+
+
