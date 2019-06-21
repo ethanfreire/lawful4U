@@ -41,6 +41,7 @@ class LawyersController < ApplicationController
   def destroy
     user = User.find(find_lawyer[:user_id])
     user.lawyer.destroy
+    user.destroy
     redirect_to login_path
   end
 

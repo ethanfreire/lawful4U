@@ -14,14 +14,32 @@
   </head>
 
   <body>
+
+  <div class="nav-header">
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary menu">
+                <a class="item" href='/'>Home</a>
+                <a class="item" href='/clients'>Clients</a>
+                <a class="item" href='/lawyers'>Attorneys</a>
+                <a class="item" href='/cases/new'>Reports</a>
+                <div class="right menu">
+                <div class="item">
+                    <div class="ui button"><a href='/login'>Log in</div>
+                </div>
+                <div class="item"><a href='/users/new'>
+                    <div class="ui primary button">Sign up</div></a>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+    
     <% if get_current_user%>
-        <div><strong>Welcome <%= get_current_user.email %></strong></div>
+        <div><strong>Welcome <%= get_current_user.email %>!</strong></div>
         <%= link_to "Logout", "/logout", method: "DELETE" %>
-
-
-
-        <% else %>
-        <%= link_to "Login", login_path %>
     <% end %>
 
     <%= yield %>
@@ -31,7 +49,7 @@
 
     <div class="footer">
         <footer>
-            <p>© 2019 Lawful4U - Personal Injury and Accident Lawyers.<br>
-            Contact information: <a href="mailto:someone@example.com">contactus@lawful4u.com</a></p>
+            <p>© 2019 J.Euler International Law Firm - Personal Injury and Accident Lawyers.<br>
+            Contact information: <a href="mailto:someone@example.com">contactus@jeuler.com</a></p>
         </footer>
 </html>

@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
   def new
-
   end
 
   def create
     @user = User.find_by(email: params[:email])
 
     if @user && @user.authenticate(params[:password]) && @user.user_type == "Client"
-      # byebug
+
       session[:user_id] = @user.id
 
       redirect_to client_path(@user.client)

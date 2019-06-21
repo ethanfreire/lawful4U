@@ -48,6 +48,7 @@ class ClientsController < ApplicationController
   def destroy
     user = User.find(find_client[:user_id])
     user.client.destroy
+    user.destroy
     redirect_to login_path
   end
 

@@ -1,8 +1,12 @@
+<br><br><br>
+<div>
+    <h1>Our Clients</h1>
+</div>
 
-<h2><%= get_current_user.email %>'s Profile</h2>
+<br><br>
 
-  <% @clients.each do |client| %>
-    <%= link_to client.name, client %><br><br>
-  <% end %>
+<% @clients.each do |client| %>
+    <h2><%= link_to client.name, client %></h2><br><br>
+<% end %>
 
  

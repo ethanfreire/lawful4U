@@ -1,24 +1,26 @@
-<br><br><br><br><br><br>
 <h1><%= @lawyer.name%>'s Profile</h1>
 
-<br><br><br>
+<br>
 
 <div class="list">
     <h3>
         Name: <%= @lawyer.name %><br><br>
-        Email: <%= @lawyer.email %><br><br>
         Phone: <%= @lawyer.phone %><br><br>
         Address: <%= @lawyer.address %><br><br>
         Fee: <%= @lawyer.attorney_fee %>
     </h3>
 </div>
 
+<h3>Cases:</h3>
+    <% @lawyer.cases.each do |obj| %>
+        <h3><li><%= link_to obj.title, case_path(obj) %></li></h3>
+    <% end %>
+
 <br><br>
 
-<strong>Cases:</strong>
-    <% @lawyer.cases.each do |obj| %>
-    <li><%= obj.title %></li>
-<% end %>
+<div class="edit-link">
+    <%= link_to "Edit Profile", edit_lawyer_path %>
+</div>
 
 <br><br>
 
@@ -28,8 +30,6 @@
     <% end %>
 </div>
 
-<br><br>
 
-<div class="edit-link">
-    <%= link_to "Edit", edit_lawyer_path %>
-</div>
+
+

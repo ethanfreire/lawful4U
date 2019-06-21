@@ -1,28 +1,36 @@
-<br><br><br><br><br><br>
+<br><br><br>
 <div class="show">
 <h1><%= @client.name%>'s Profile</h1>
 
-<br><br><br>
+<br>
 
-    <li>Phone: <%= @client.phone %></li><br>
+<div class="list">
+    <h3>
+        Name: <%= @client.name %><br><br>
+        Phone: <%= @client.phone %><br><br>
+        Address: <%= @client.address %>
+    </h3>
+</div>
 
+<br>
 
-</strong>
-<br></br>
+<h3>My Cases:</h3>
+        <% @client.cases.each do |obj| %>
+            <h3><li><%= link_to obj.title, case_path(obj) %></li></h3>
+        <% end %>
 
-<%= link_to "Edit", edit_client_path %>
-<br></br>
+<br><br>
 
-<%= link_to "Create a new case", new_case_path %>
-<br></br>
+<div class="edit-link">
+    <%= link_to "Edit Profile", edit_client_path %>
+</div>
 
-<ol>
-  <strong>My Cases:</strong>
-  <% @client.cases.each do |obj| %>
-  <li><%= link_to obj.title, case_path(obj) %></li>
-  <% end %>
-</ol>
+<h3><%= link_to "New Case", new_case_path %></h3>
 
-<%= form_tag client_path(@client.id), method: "DELETE" do %>
-  <%= submit_tag "Delete #{@client.name}" %>
-  <% end %><br><br>
+<br>
+
+<div class="delete-link">
+    <%= form_tag client_path(@client.id), method: "DELETE" do %>
+        <%= submit_tag "Delete #{@client.name}" %>
+    <% end %>
+</div>

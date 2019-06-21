@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_20_181143) do
+ActiveRecord::Schema.define(version: 2019_06_21_154706) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "duration"
     t.datetime "datetime"
     t.string "appointment_type"
     t.integer "case_id"
+    t.integer "lawyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +39,13 @@ ActiveRecord::Schema.define(version: 2019_06_20_181143) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+  end
+
+  create_table "lawyer_cases", force: :cascade do |t|
+    t.integer "case_id"
+    t.integer "lawyer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lawyers", force: :cascade do |t|
