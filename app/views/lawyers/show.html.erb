@@ -4,7 +4,6 @@
 <strong>
   <ul>
     <li>Name: <%= @lawyer.name %></li>
-    <li>Email: <%= @lawyer.email %></li>
     <li>Phone: <%= @lawyer.phone %></li>
     <li>Address: <%= @lawyer.address %></li>
     <li>Fee: <%= @lawyer.attorney_fee %></li>
@@ -15,12 +14,13 @@
 <ol>
   <strong>Cases:</strong>
   <% @lawyer.cases.each do |obj| %>
-  <li><%= obj.title %></li>
+  <li><%= link_to obj.title, case_path(obj)  %></li>
   <% end %>
 </ol>
+
+<%= link_to "Edit", edit_lawyer_path %>
 
 
 <%= form_tag lawyer_path(@lawyer.id), method: "DELETE" do %>
   <%= submit_tag "Delete #{@lawyer.name}" %>
   <% end %>
-<%= link_to "Edit", edit_lawyer_path %>

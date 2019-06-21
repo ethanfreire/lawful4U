@@ -2,12 +2,14 @@ class LawyersController < ApplicationController
 
 
   before_action :find_lawyer, only: [:edit, :show, :update, :destroy]
+  before_action :authorized, except: [:index, :show]
 
   def index
     @lawyers = Lawyer.all
   end
 
   def show
+
   end
 
   def new
@@ -21,7 +23,7 @@ class LawyersController < ApplicationController
     @lawyer = Lawyer.new(lawyer_params)
     if @lawyer.valid?
       @lawyer.save
-      
+
       redirect_to lawyer_path(@lawyer)
     else
       render :new
@@ -37,8 +39,9 @@ class LawyersController < ApplicationController
   end
 
   def destroy
-    @lawyer.destroy
-    redirect_to lawyers_path
+    user = User.find(find_lawyer[:user_id])
+    user.lawyer.destroy
+    redirect_to login_path
   end
 
   private
@@ -48,6 +51,6 @@ class LawyersController < ApplicationController
   end
 
   def lawyer_params
-    params.require(:lawyer).permit(:name, :email, :phone, :address, :attorney_fee, :user_id)
+    params.require(:lawyer).permit(:name, :phone, :address, :attorney_fee, :user_id)
   end
 end

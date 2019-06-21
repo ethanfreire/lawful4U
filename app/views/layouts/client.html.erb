@@ -7,15 +7,17 @@
   <body>
     <%# <h1><center>Welcome User!</center></h1> %>
 
-    <% if session["user_id"] %>
+    <% if session[:id] %>
         <div><strong>Welcome <%= get_current_user.email %></strong></div>
         <%= link_to "Logout", "/logout", method: "DELETE" %>
+
+
+
         <% else %>
         <%= link_to "Login", login_path %>
     <% end %>
 
-    <%= link_to "Home", clients_path %>
-    <%= link_to "New", new_client_path %>
+
     <%= yield %>
   </body>
 </html>

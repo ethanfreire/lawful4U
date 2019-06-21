@@ -1,3 +1,4 @@
+
 <h1><%= @case.title %></h1>
 <br />
 Status: <%= @case.status %>
@@ -5,14 +6,13 @@ Status: <%= @case.status %>
 Case Type: <%= @case.case_type %>
 <br  />
 
-Case Client: <%= @case.client.name%>
+Case Client: <%=link_to @case.client.name, client_path(@case.client)%>
 <br/>
 
 Case Lawyers:
-<% @case.lawyers.each do |obj| %>
-<li><%= obj.name %></li>
-<% end %>
-<br/>
+<%= link_to @case.lawyer.name, lawyer_path(@case.lawyer) %>
+<br></br>
+
 <%= link_to "Edit this Case", edit_case_path %>
 
 

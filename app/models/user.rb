@@ -3,4 +3,5 @@ class User < ApplicationRecord
     has_one :client
     has_one :lawyer
     validates :email, presence: true, uniqueness: true
+    validates :email, confirmation: true
 end

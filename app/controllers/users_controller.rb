@@ -5,18 +5,16 @@ class UsersController < ApplicationController
 
   def create
 
-      @user = User.new(user_params)
+      @user = User.create(user_params)
 
-      if @user.valid? && @user.user_type == "Lawyer"
-        @user.save
+      if @user.user_type == "Lawyer"
         session[:user_id] = @user.id
+
         redirect_to new_lawyer_path
       elsif @user.valid? && @user.user_type == "Client"
         @user.save
         session[:user_id] = @user.id
         redirect_to new_client_path
-    else
-        render :new
       end
   end
 

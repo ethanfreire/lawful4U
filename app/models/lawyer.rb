@@ -1,10 +1,10 @@
 class Lawyer < ApplicationRecord
   belongs_to :user
-  has_many :lawyer_cases
-  has_many :cases, through: :lawyer_cases
-  has_many :appointments
+  has_many :cases
+  has_many :appointments, through: :cases
+  has_many :clients, through: :cases
 
-  validates :name, :email, :address, :attorney_fee, presence: true
-  validates :email, confirmation: true
+  validates :name, :address, :attorney_fee, presence: true
+
   validates :phone, length: { is: 10 }
 end

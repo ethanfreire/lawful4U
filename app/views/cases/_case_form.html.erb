@@ -5,8 +5,9 @@
  <%= f.text_field :case_type %>
  <%= f.label :status %>
  <%= f.text_field :status %>
- <!--associate client name with their client id -->
- <%= f.hidden_field "#{get_current_user.email}" %>
+ <%= f.hidden_field :client_id, value: get_current_user.client.id %>
+
+ <%= f.collection_select(:lawyer_id, Lawyer.all, :id, :name, {:prompt => "Select your Lawyer"}) %>
+
  <%= f.submit %>
 <% end %>
-<%# Client Name: <%= @case.client.name %> %>

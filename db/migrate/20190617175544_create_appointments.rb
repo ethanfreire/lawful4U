@@ -5,7 +5,6 @@ class CreateAppointments < ActiveRecord::Migration[5.2]
       t.datetime :datetime
       t.string :appointment_type
       t.integer :case_id
-      t.integer :lawyer_id
 
       t.timestamps
     end

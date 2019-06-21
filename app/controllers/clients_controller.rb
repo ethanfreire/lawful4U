@@ -1,14 +1,19 @@
 class ClientsController < ApplicationController
+  before_action :authorized, except: [:index, :show]
 
   # layout "client"
 
   before_action :find_client, only: [:edit, :show, :update, :destroy]
 
   def index
+
     @clients = Client.all
+
+
   end
 
   def show
+
   end
 
   def new
@@ -16,6 +21,7 @@ class ClientsController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
@@ -38,8 +44,9 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    @client.destroy
-    redirect_to clients_path
+    user = User.find(find_client[:user_id])
+    user.client.destroy
+    redirect_to login_path
   end
 
   private
@@ -49,6 +56,6 @@ class ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:name, :email, :phone, :address, :user_id)
+    params.require(:client).permit(:name, :phone, :address, :user_id)
   end
 end
